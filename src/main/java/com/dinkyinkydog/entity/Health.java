@@ -4,6 +4,10 @@ public class Health {
 	private int maxHealth;
 	private int currentHealth;
 	
+	private int fail;
+	private int succeed;
+	private boolean playerdead;
+	private boolean playerup;
 	
 	
 	public void heal(int points) {
@@ -31,33 +35,85 @@ public class Health {
 	}
 	
 	
+	public void fail() {
+		setFail(fail + 1);
+		if(fail >= 3) {
+			setPlayerdead(true);
+		}
+	}
+	
+	public void succeed() {
+		setSucceed(succeed + 1);
+		if(succeed >= 3) {
+			setPlayerup(true);
+		}
+	}
+	
+	public void resetDeathSave() {
+		setFail(0);
+		setSucceed(0);
+		setPlayerdead(false);
+		setPlayerup(false);
+	}
+	
+	
 	public Health() {
 		
 	}
-	
+
 	public Health(int maxHealth) {
 		setMaxHealth(maxHealth);
 		setCurrentHealth(maxHealth);
 	}
-	
+
 	public Health(int maxHealth, int currentHealth) {
 		setMaxHealth(maxHealth);
 		setCurrentHealth(currentHealth);
 	}
-	
+
+	public int getFail() {
+		return fail;
+	}
+	public void setFail(int fail) {
+		this.fail = fail;
+	}
+	public int getSucceed() {
+		return succeed;
+	}
+	public void setSucceed(int succeed) {
+		this.succeed = succeed;
+	}
+
+	public boolean isPlayerdead() {
+		return playerdead;
+	}
+
+	public void setPlayerdead(boolean playerdead) {
+		this.playerdead = playerdead;
+	}
+
+	public boolean isPlayerup() {
+		return playerup;
+	}
+
+	public void setPlayerup(boolean playerup) {
+		this.playerup = playerup;
+	}
+
 	public int getMaxHealth() {
 		return maxHealth;
 	}
+
 	public void setMaxHealth(int maxHealth) {
 		this.maxHealth = maxHealth;
 	}
+
 	public int getCurrentHealth() {
 		return currentHealth;
 	}
+
 	public void setCurrentHealth(int currentHealth) {
 		this.currentHealth = currentHealth;
 	}
-	
-	
 	
 }
