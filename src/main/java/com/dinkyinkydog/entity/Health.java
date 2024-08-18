@@ -8,6 +8,7 @@ public class Health {
 	private int succeed;
 	private boolean playerdead;
 	private boolean playerup;
+	private boolean downed;
 	
 	
 	public void heal(int points) {
@@ -24,6 +25,11 @@ public class Health {
 		} else {
 			setCurrentHealth(currentHealth - points);
 		}
+		
+		if(currentHealth == 0) {
+			setDowned(true);
+		}
+		
 	}
 	
 	public void fullHealth() {
@@ -54,23 +60,29 @@ public class Health {
 		setSucceed(0);
 		setPlayerdead(false);
 		setPlayerup(false);
+		setDowned(false);
 	}
 	
 	
 	public Health() {
-		
+		resetDeathSave();
 	}
 
 	public Health(int maxHealth) {
 		setMaxHealth(maxHealth);
 		setCurrentHealth(maxHealth);
+		resetDeathSave();
 	}
 
 	public Health(int maxHealth, int currentHealth) {
 		setMaxHealth(maxHealth);
 		setCurrentHealth(currentHealth);
+		resetDeathSave();
 	}
 
+	
+	
+	//--------------------getters and setters------------------------------
 	public int getFail() {
 		return fail;
 	}
@@ -114,6 +126,14 @@ public class Health {
 
 	public void setCurrentHealth(int currentHealth) {
 		this.currentHealth = currentHealth;
+	}
+
+	public boolean isDowned() {
+		return downed;
+	}
+
+	public void setDowned(boolean downed) {
+		this.downed = downed;
 	}
 	
 }
