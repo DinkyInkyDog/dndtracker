@@ -21,17 +21,28 @@ public class TrackView extends HorizontalLayout {
 
     public TrackView() {
     	
-         NativeLabel maxHealthLabel = new NativeLabel("" + health.getMaxHealth());
+         NativeLabel maxHealthLabel = new NativeLabel("Max: " + health.getMaxHealth());
          NativeLabel currentHealthLabel = new NativeLabel("" + health.getCurrentHealth());
+         Image hp = new Image("icons/HPicon.png", "currentHealthIcon");
          add(maxHealthLabel);
          add(currentHealthLabel);
-         String brokenHeart = "img/Icon.brokenheart.png";
-         Image takeDamageIcon = new Image(brokenHeart, "broken heart");
-         takeDamageIcon.setWidth("100px");
+         
+         
+         
+         //heal/damage buttons
+         String buttonSize = "70px";
+         
+         Image takeDamageIcon = new Image("img/Icon.brokenheart.png", "broken heart");
+         takeDamageIcon.setWidth(buttonSize);
          Button takeDamageButton = new Button(takeDamageIcon);
          takeDamageButton.addThemeVariants(ButtonVariant.LUMO_ICON);
          
+         Image healthpotionIcon = new Image("img/icon.potion.png", "potion bottle");
+         healthpotionIcon.setWidth(buttonSize);
+         Button healButton = new Button(healthpotionIcon);
+         
          add(takeDamageButton);
+         add(healButton);
     }
 
 }
