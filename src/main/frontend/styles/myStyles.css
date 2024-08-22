@@ -1,0 +1,23 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.image-container {
+    position: relative;
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    width: 300px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+}
+
+.centered-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Adjust the text color as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+}

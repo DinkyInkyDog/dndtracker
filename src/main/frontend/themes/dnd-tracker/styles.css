@@ -1,4 +1,3 @@
-html {
-  --lumo-primary-color: green;
-  --lumo-font-family: 'Roboto';
+vaadin-button {
+  --lumo-primary-text-color: green;
 }
