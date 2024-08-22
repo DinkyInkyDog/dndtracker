@@ -7,7 +7,7 @@
 
 .image-container {
     position: relative;
-    background-image: url('path/to/your/image.jpg');
+    background-image: url('C:\Users\patty\OneDrive\Desktop\CodingProjects\Vaadin\dndtracker\src\main\resources\META-INF\resources\icons/HPicon.png');
     background-size: cover;
     width: 300px; /* Adjust the width as needed */
     height: 200px; /* Adjust the height as needed */

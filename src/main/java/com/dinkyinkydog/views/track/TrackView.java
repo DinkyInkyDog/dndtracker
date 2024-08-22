@@ -16,7 +16,6 @@ import com.vaadin.flow.theme.lumo.Lumo;
 @PageTitle("Track")
 @Route(value = "")
 @RouteAlias(value = "")
-@Theme(value = "lumo", variant = Lumo.DARK)
 @CssImport("./styles/myStyles.css")
 public class TrackView extends HorizontalLayout {
 
