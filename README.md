@@ -1,7 +1,6 @@
 # DndTracker
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+A Dungeons and Dragons health points tracking web application using Vaadin. This way you won't have to keep using up scrap paper to track your character's health, you can use this counter. I'm planning to add magic tracking, as well as money tracking in the future.
 
 ## Running the application
 
