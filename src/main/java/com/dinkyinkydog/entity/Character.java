@@ -46,7 +46,4 @@ public class Character {
 	}
 
 	
-	public Character(String _class) {
-		set_class(_class);
-	}
 }
