@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.NativeLabel;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.router.PageTitle;
@@ -34,9 +35,13 @@ public class TrackView extends HorizontalLayout {
     	
     	//---max health state----
          NativeLabel maxHealthLabel = new NativeLabel("Max: " + health.getMaxHealth());
+         maxHealthLabel.addClassName("max_health_label");
          NativeLabel currentHealthLabel = new NativeLabel("" + health.getCurrentHealth());
          currentHealthLabel.setClassName("centered-label");
          Image hp = new Image("icons/HPicon.png", "currentHealthIcon");
+         hp.setClassName("health-image");
+         
+         
          
          //---change number input---
          NumberField healthChange = new NumberField();
@@ -52,6 +57,8 @@ public class TrackView extends HorizontalLayout {
          takeDamageButton.addClickListener(event ->{ 
         	 double value = healthChange.getValue();
         	 health.takeDamage((int)value);
+        	 currentHealthLabel.setText("" + health.getCurrentHealth());
+        	 Notification.show("Damage subtracted from health");
         	 });
          
          Image healthpotionIcon = new Image("img/icon.potion.png", "potion bottle");
@@ -60,13 +67,15 @@ public class TrackView extends HorizontalLayout {
          healButton.addClickListener(event -> {
         	 double value = healthChange.getValue(); 
         	 health.heal((int)value);
+        	 currentHealthLabel.setText("" + health.getCurrentHealth());
+        	 Notification.show("Health added to health");
          });
          
          
          //--view---
          mainPage.add(currentHealthDisplay, healthcontrols);
          healthcontrols.add(healButton,healthChange, takeDamageButton);
-         currentHealthDisplay.add(currentHealthLabel);
+         currentHealthDisplay.add(hp,currentHealthLabel);
          
          add(mainPage);
          

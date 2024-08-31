@@ -2,19 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    right: 100px;
     height: 100vh; /* Full viewport height */
 }
 
 .health-display {
     position: relative;
-    background-image: url('/src/main/resources/META-INF/resources/img/HPicon.png');
-    background-size: 100% 100%;
-    background-position: center;
     padding: 50px;
     width: 100px; /* Adjust the width as needed */
     height: 150px; /* Adjust the height as needed */
 }
 
+.health-image {
+    width: 100%;
+    height: auto;
+}
 .centered-label {
     position: absolute;
     top: 50%;
