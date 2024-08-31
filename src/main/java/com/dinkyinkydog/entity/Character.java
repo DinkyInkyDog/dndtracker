@@ -18,28 +18,40 @@ public class Character {
 		switch(_class) {
 		case "druid":
 			return Classes.DRUID;
+			
 		case "cleric":
 			return Classes.CLERIC;
+			
 		case "barbarian":
 			return Classes.BARBARIAN;
+			
 		case "bard":
 			return Classes.BARD;
+			
 		case "fighter":
 			return Classes.FIGHTER;
+			
 		case "paladin":
 			return Classes.PALADIN;
+			
 		case "rogue":
 			return Classes.ROGUE;
+			
 		case "monk":
 			return Classes.MONK;
+			
 		case "ranger":
 			return Classes.RANGER;
+			
 		case "sorcerer":
 			return Classes.SORCERER;
+			
 		case "warlock":
 			return Classes.WARLOCK;
+			
 		case "wizard":
 			return Classes.WIZARD;
+			
 		default:
 			return Classes.UNDEFINED;
 		}
