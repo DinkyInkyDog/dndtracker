@@ -9,13 +9,14 @@
 .health-display {
     position: relative;
     padding: 50px;
-    width: 100px; /* Adjust the width as needed */
-    height: 150px; /* Adjust the height as needed */
+    width: 160px; /* Adjust the width as needed */
+    height: 170px; /* Adjust the height as needed */
 }
 
 .health-image {
     width: 100%;
     height: auto;
+    transform: translateY(-21px);
 }
 .centered-label {
     position: absolute;
@@ -24,4 +25,8 @@
     transform: translate(-50%, -50%);
     color: black; /* Adjust the text color as needed */
     font-size: 40px; /* Adjust the font size as needed */
+}
+
+.health-controls {
+    transform: translateX(60px);
 }

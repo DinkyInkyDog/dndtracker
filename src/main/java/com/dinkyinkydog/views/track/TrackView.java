@@ -28,6 +28,8 @@ public class TrackView extends HorizontalLayout {
 		mainPage.setClassName("main-page");
 
 		Div healthcontrols = new Div();
+		healthcontrols.setClassName("health-controls");
+		
 		Div currentHealthDisplay = new Div();
 		currentHealthDisplay.setClassName("health-display");
 
@@ -44,7 +46,7 @@ public class TrackView extends HorizontalLayout {
 		healthChange.setWidth("50px");
 
 		// heal/damage buttons
-		String buttonSize = "70px";
+		String buttonSize = "60px";
 
 		Image takeDamageIcon = new Image("img/Icon.brokenheart.png", "broken heart");
 		takeDamageIcon.setWidth(buttonSize);
