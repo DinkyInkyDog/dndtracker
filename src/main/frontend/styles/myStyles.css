@@ -30,3 +30,7 @@
 .health-controls {
     transform: translateX(60px);
 }
+
+.progressBar {
+    position: absolute;
+}

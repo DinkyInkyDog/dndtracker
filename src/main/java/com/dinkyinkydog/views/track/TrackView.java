@@ -8,6 +8,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.progressbar.ProgressBar;
 import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -40,7 +41,10 @@ public class TrackView extends HorizontalLayout {
 		currentHealthLabel.setClassName("centered-label");
 		Image hp = new Image("icons/HPicon.png", "currentHealthIcon");
 		hp.setClassName("health-image");
-
+		ProgressBar progressBar = new ProgressBar();
+		progressBar.setClassName("progressBar");
+		
+		
 		// ---change number input---
 		NumberField healthChange = new NumberField();
 		healthChange.setWidth("50px");
@@ -79,7 +83,7 @@ public class TrackView extends HorizontalLayout {
 		});
 
 		// --view---
-		mainPage.add(currentHealthDisplay, healthcontrols);
+		mainPage.add(currentHealthDisplay, progressBar, healthcontrols);
 		healthcontrols.add(healButton, healthChange, takeDamageButton);
 		currentHealthDisplay.add(hp, currentHealthLabel);
 
