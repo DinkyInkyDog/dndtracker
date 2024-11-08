@@ -3,6 +3,7 @@ package com.dinkyinkydog.views.track;
 import com.dinkyinkydog.entity.Health;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.dependency.JavaScript;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.NativeLabel;
@@ -18,6 +19,7 @@ import com.vaadin.flow.router.RouteAlias;
 @Route(value = "")
 @RouteAlias(value = "")
 @CssImport("./styles/myStyles.css")
+@JavaScript("./scripts/progress-bar-script.js")
 public class TrackView extends HorizontalLayout {
 
 	private Health health = new Health(16);
@@ -33,6 +35,10 @@ public class TrackView extends HorizontalLayout {
 		
 		Div currentHealthDisplay = new Div();
 		currentHealthDisplay.setClassName("health-display");
+		
+		Div progress_container = new Div();
+		progress_container.setClassName("progress-container");
+		
 
 		// ---max health state----
 		NativeLabel maxHealthLabel = new NativeLabel("Max: " + health.getMaxHealth());
@@ -81,6 +87,16 @@ public class TrackView extends HorizontalLayout {
 				Notification.show("Please enter a number in the feild");
 			}
 		});
+		
+		//----Progress Bar------
+		Image progress_color = new Image("img/progress-color.png", "");
+		progress_color.setClassName("progress-bar");
+		
+		Image top_design = new Image("img/top-design", "");
+		top_design.setClassName("top-design");
+		
+		progress_container.add(progress_color, top_design);
+		
 
 		// --view---
 		mainPage.add(currentHealthDisplay, progressBar, healthcontrols);
