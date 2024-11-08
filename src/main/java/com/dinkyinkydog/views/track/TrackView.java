@@ -40,7 +40,8 @@ public class TrackView extends HorizontalLayout {
 		
 		Div progress_container = new Div();
 		progress_container.setClassName("progress-container");
-		
+		int maxHealth = health.getMaxHealth();
+		UI.getCurrent().getPage().executeJs("setPlayerMaxHealth($0)", maxHealth);
 
 		// ---max health state----
 		NativeLabel maxHealthLabel = new NativeLabel("Max: " + health.getMaxHealth());
@@ -84,7 +85,7 @@ public class TrackView extends HorizontalLayout {
 				health.heal((int) value);
 				currentHealthLabel.setText("" + health.getCurrentHealth());
 				UI.getCurrent().getPage().executeJs("setProgressHealth($0)", health.getCurrentHealth());
-				Notification.show("Health added to health");
+				Notification.show(health.getCurrentHealth() + "Health added to health");
 				healthChange.setValue(null);
 			} else {
 				Notification.show("Please enter a number in the feild");
