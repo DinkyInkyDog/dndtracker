@@ -1,6 +1,7 @@
 package com.dinkyinkydog.views.track;
 
 import com.dinkyinkydog.entity.Health;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JavaScript;
@@ -9,6 +10,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.page.Page;
 import com.vaadin.flow.component.progressbar.ProgressBar;
 import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.router.PageTitle;
@@ -65,6 +67,7 @@ public class TrackView extends HorizontalLayout {
 				double value = healthChange.getValue();
 				health.takeDamage((int) value);
 				currentHealthLabel.setText("" + health.getCurrentHealth());
+				UI.getCurrent().getPage().executeJs("setProgressHealth($0)", health.getCurrentHealth());
 				Notification.show("Damage subtracted from health");
 				healthChange.setValue(null);
 			} else {
@@ -80,6 +83,7 @@ public class TrackView extends HorizontalLayout {
 				double value = healthChange.getValue();
 				health.heal((int) value);
 				currentHealthLabel.setText("" + health.getCurrentHealth());
+				UI.getCurrent().getPage().executeJs("setProgressHealth($0)", health.getCurrentHealth());
 				Notification.show("Health added to health");
 				healthChange.setValue(null);
 			} else {
