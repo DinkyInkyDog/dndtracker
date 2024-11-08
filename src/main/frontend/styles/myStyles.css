@@ -11,12 +11,15 @@
     padding: 50px;
     width: 160px; /* Adjust the width as needed */
     height: 170px; /* Adjust the height as needed */
+    z-index: 5;
 }
 
 .health-image {
     width: 100%;
     height: auto;
     transform: translateY(-21px);
+    z-index: 4;
+
 }
 .centered-label {
     position: absolute;
@@ -31,6 +34,29 @@
     transform: translateX(60px);
 }
 
-.progressBar {
-    position: absolute;
-}
+.progress-container {
+    width: 449px;
+    height: 49px;
+    position: relative;
+    bottom: 120px;
+    left: 40px;
+  }
+  .top-design{
+      position: relative;
+      width: 449px;
+      height: 49px;
+      z-index: 2;
+  }
+  /*this name is important if you want it to work outside this test*/
+  .progress-bar {
+    /*This is what I'm affecting to show the percentage*/
+    height: 100%;
+    width: 449px;
+    min-width: 97px;
+    max-width: 449px;
+    position: absolute; /* Absolute position within the container */
+    top: 0; 
+    left: 0;
+    transition: width 0.5s ease;
+    z-index: 1;
+  }

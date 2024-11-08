@@ -47,8 +47,7 @@ public class TrackView extends HorizontalLayout {
 		currentHealthLabel.setClassName("centered-label");
 		Image hp = new Image("icons/HPicon.png", "currentHealthIcon");
 		hp.setClassName("health-image");
-		ProgressBar progressBar = new ProgressBar();
-		progressBar.setClassName("progressBar");
+		
 		
 		
 		// ---change number input---
@@ -92,14 +91,14 @@ public class TrackView extends HorizontalLayout {
 		Image progress_color = new Image("img/progress-color.png", "");
 		progress_color.setClassName("progress-bar");
 		
-		Image top_design = new Image("img/top-design", "");
+		Image top_design = new Image("img/top-design.png", "");
 		top_design.setClassName("top-design");
 		
 		progress_container.add(progress_color, top_design);
 		
 
 		// --view---
-		mainPage.add(currentHealthDisplay, progressBar, healthcontrols);
+		mainPage.add(currentHealthDisplay, progress_container, healthcontrols);
 		healthcontrols.add(healButton, healthChange, takeDamageButton);
 		currentHealthDisplay.add(hp, currentHealthLabel);
 
