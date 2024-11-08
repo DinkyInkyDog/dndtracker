@@ -27,3 +27,8 @@ window.setPlayerMaxHealth = function(newMax) {
   playerMaxHealth = intValue;
   console.log("Player's max health set to", playerMaxHealth);
 };
+
+window.hello = function(number) {
+  let userinput = number;
+  alert("hello, the number you said was " + userinput);
+}

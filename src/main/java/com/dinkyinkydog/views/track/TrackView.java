@@ -84,8 +84,9 @@ public class TrackView extends HorizontalLayout {
 				double value = healthChange.getValue();
 				health.heal((int) value);
 				currentHealthLabel.setText("" + health.getCurrentHealth());
+				
 				UI.getCurrent().getPage().executeJs("setProgressHealth($0)", health.getCurrentHealth());
-				Notification.show(health.getCurrentHealth() + "Health added to health");
+				Notification.show("Health added to health");
 				healthChange.setValue(null);
 			} else {
 				Notification.show("Please enter a number in the feild");
