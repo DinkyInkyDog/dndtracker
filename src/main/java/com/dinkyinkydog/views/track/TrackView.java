@@ -98,7 +98,7 @@ public class TrackView extends HorizontalLayout {
 		
 
 		// --view---
-		mainPage.add(currentHealthDisplay, progress_container, healthcontrols);
+		mainPage.add(currentHealthDisplay, maxHealthLabel, progress_container, healthcontrols);
 		healthcontrols.add(healButton, healthChange, takeDamageButton);
 		currentHealthDisplay.add(hp, currentHealthLabel);
 
