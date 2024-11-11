@@ -1,5 +1,7 @@
 package com.dinkyinkydog.views.track;
 
+import java.lang.System.Logger;
+
 import com.dinkyinkydog.entity.Health;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -16,15 +18,19 @@ import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
+import java.util.logging.Level;
+
 
 @PageTitle("Track")
 @Route(value = "")
 @RouteAlias(value = "")
 @CssImport("./styles/myStyles.css")
-@JavaScript("./scripts/progress-bar-script.js")
+
 public class TrackView extends HorizontalLayout {
 
 	private Health health = new Health(16);
+	
+
 
 	public TrackView() {
 
@@ -68,7 +74,7 @@ public class TrackView extends HorizontalLayout {
 				double value = healthChange.getValue();
 				health.takeDamage((int) value);
 				currentHealthLabel.setText("" + health.getCurrentHealth());
-				UI.getCurrent().getPage().executeJs("setProgressHealth($0)", health.getCurrentHealth());
+				
 				Notification.show("Damage subtracted from health");
 				healthChange.setValue(null);
 			} else {
@@ -84,8 +90,6 @@ public class TrackView extends HorizontalLayout {
 				double value = healthChange.getValue();
 				health.heal((int) value);
 				currentHealthLabel.setText("" + health.getCurrentHealth());
-				
-				UI.getCurrent().getPage().executeJs("setProgressHealth($0)", health.getCurrentHealth());
 				Notification.show("Health added to health");
 				healthChange.setValue(null);
 			} else {

@@ -25,7 +25,6 @@ window.setPlayerMaxHealth = function(newMax) {
   
   // Set the player's max health to the parsed integer value
   playerMaxHealth = intValue;
-  console.log("Player's max health set to", playerMaxHealth);
 };
 
 window.hello = function(number) {

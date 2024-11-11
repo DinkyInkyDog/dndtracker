@@ -1,5 +1,9 @@
 package com.dinkyinkydog.entity;
 
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.dependency.JavaScript;
+
+@JavaScript("./scripts/progress-bar-script.js")
 public class Health {
 	private int maxHealth;
 	private int currentHealth;
@@ -14,8 +18,11 @@ public class Health {
 	public void heal(int points) {
 		if(currentHealth + points > maxHealth) {
 			setCurrentHealth(maxHealth);
+			System.out.println("current health is now max: " + maxHealth);
+			//UI.getCurrent().getPage().executeJs("setProgressHealth($0)", health.getCurrentHealth());
 		} else {
 			setCurrentHealth(currentHealth + points);
+			System.out.println("current health is now " + currentHealth);
 		}
 	}
 	
@@ -118,6 +125,7 @@ public class Health {
 
 	public void setMaxHealth(int maxHealth) {
 		this.maxHealth = maxHealth;
+		UI.getCurrent().getPage().executeJs("setPlayerMaxHealth($0)", maxHealth);
 	}
 
 	public int getCurrentHealth() {
@@ -126,6 +134,7 @@ public class Health {
 
 	public void setCurrentHealth(int currentHealth) {
 		this.currentHealth = currentHealth;
+		UI.getCurrent().getPage().executeJs("setProgressHealth($0)", currentHealth);
 	}
 
 	public boolean isDowned() {
