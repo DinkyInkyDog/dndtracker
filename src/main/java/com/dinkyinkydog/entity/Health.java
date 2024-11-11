@@ -1,9 +1,11 @@
 package com.dinkyinkydog.entity;
 
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JavaScript;
 
 @JavaScript("./scripts/progress-bar-script.js")
+@CssImport("./styles/myStyle.css")
 public class Health {
 	private int maxHealth;
 	private int currentHealth;
@@ -126,6 +128,7 @@ public class Health {
 	public void setMaxHealth(int maxHealth) {
 		this.maxHealth = maxHealth;
 		UI.getCurrent().getPage().executeJs("setPlayerMaxHealth($0)", maxHealth);
+		System.out.println("");
 	}
 
 	public int getCurrentHealth() {
