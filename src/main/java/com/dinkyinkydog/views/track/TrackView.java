@@ -40,7 +40,7 @@ public class TrackView extends HorizontalLayout {
 
 		Div healthcontrols = new Div();
 		healthcontrols.setClassName("health-controls");
-		
+		 
 		Div currentHealthDisplay = new Div();
 		currentHealthDisplay.setClassName("health-display");
 		
@@ -57,6 +57,15 @@ public class TrackView extends HorizontalLayout {
 		Image hp = new Image("icons/HPicon.png", "currentHealthIcon");
 		hp.setClassName("health-image");
 		
+
+		//----Progress Bar------
+		Image progress_color = new Image("img/progress-color.png", "");
+		progress_color.setClassName("progress-bar");
+		
+		Image top_design = new Image("img/top-design.png", "");
+		top_design.setClassName("top-design");
+		
+		progress_container.add(progress_color, top_design);
 		
 		
 		// ---change number input---
@@ -96,15 +105,6 @@ public class TrackView extends HorizontalLayout {
 				Notification.show("Please enter a number in the feild");
 			}
 		});
-		
-		//----Progress Bar------
-		Image progress_color = new Image("img/progress-color.png", "");
-		progress_color.setClassName("progress-bar");
-		
-		Image top_design = new Image("img/top-design.png", "");
-		top_design.setClassName("top-design");
-		
-		progress_container.add(progress_color, top_design);
 		
 
 		// --view---
